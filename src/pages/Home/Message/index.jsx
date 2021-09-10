@@ -33,7 +33,7 @@ class Home_message extends Component {
                                         {message.title}
                                     </Link>*/}
 
-                                    <Link to={{
+                                    <Link repalce={true} to={{
                                         pathname: "/home/message/detail",
                                         state: {id: message.id, title: message.title}
                                     }}>
