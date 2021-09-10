@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import qs from "querystring";
+// import qs from "querystring";
 
 class Detail extends Component {
   state = {
@@ -17,12 +17,18 @@ class Detail extends Component {
     // const {id, title} = this.props.match.params;
 
     //通过search进行传参,这里silce是因为这里前面有一个？
-    const { search } = this.props.location;
-    const { id, title } = qs.parse(search.slice(1));
+    /*   const { search } = this.props.location;
+      const { id, title } = qs.parse(search.slice(1)); */
+
+
+    //通过state传参
+    const { id, title } = this.props.location.state;
+
     /*const {search} = this.props.location;
         const {id, title} = qs.parse(search.slice(1));*/
 
     // const {id, title} = this.props.location.state || {};
+
 
     const findResult =
       this.state.messages.find((message) => {

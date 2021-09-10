@@ -19,9 +19,14 @@ class Home_message extends Component {
     ); */
 
     //通过search（query）进行传参
-    this.props.history.push(
+    /*  this.props.history.push(
       `/home/message/detail?id=${message.id}&title=${message.title}`
-    );
+    ); */
+
+    this.props.history.push('/home/message/detail', {
+      id: message.id,
+      title: message.title
+    })
   };
 
   replaceShow = (message) => {
@@ -31,9 +36,14 @@ class Home_message extends Component {
     ); */
 
     //通过search（query）进行传参！
-    this.props.history.replace(
+    /* this.props.history.replace(
       `/home/message/detail?id=${message.id}&title=${message.title}`
-    );
+    ); */
+
+    this.props.history.replace('/home/message/detail',{
+      id:message.id,
+      title:message.title
+    })
   };
 
   render() {
@@ -82,7 +92,11 @@ class Home_message extends Component {
         {/* <Route path="/home/message/detail/:id/:title" component={Detail} /> */}
 
         {/* 通过search进行传参 */}
-        <Route path="/home/message/detail" component={Detail} />
+        {/* <Route path="/home/message/detail" component={Detail} /> */}
+
+        {/* 通过state进行传参 */}
+        <Route path='/home/message/detail'component={Detail}/>
+
         {/* /!*<Route path="/home/message/detail/:id/:title" component={Detail}/>*!/ //这里是通过params传参 */}
         {/*<Route path="/home/message/detail" component={Detail}/>*/}
         {/* <Route path="/home/message/detail" component={Detail} /> */}
